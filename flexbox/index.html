@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexbox</title>
+        <style>
+            div {
+                border: 1px solid black;
+                text-align: center;
+            }
+            #flex-container {
+                display: flex;
+                flex-direction: row;
+            }
+            #left {
+                order: 1;
+                flex: 1 1 20%;
+            }
+            #right {
+                order: 3;
+                flex: 1 1 20%;
+            }
+            #main {
+                order: 2;
+                flex: 1 1 60%;
+            }
+            
+            @media all and (max-width: 640px)
+            {
+                #flex-container {
+                    flex-direction: column;
+                }
+                #main {
+                    order: 4;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id='header'>header</div>
+        <div id='flex-container'>
+            <div id='left'>left</div>
+            <div id='main'>main</div>
+            <div id='right'>right</div>
+        </div>
+        <div id='footer'>footer</div>
+    </body>
+</html>
